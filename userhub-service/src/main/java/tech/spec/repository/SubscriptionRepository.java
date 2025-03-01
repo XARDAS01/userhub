@@ -21,7 +21,7 @@ public interface SubscriptionRepository extends JpaRepository<Subscription, UUID
     @Query("""
             select subscription.type
             from Subscription subscription
-            group by s.type
+            group by subscription.type
             order by count(subscription.type) desc
             """)
     List<SubscriptionType> findTopTypes();

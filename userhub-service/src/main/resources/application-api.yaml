@@ -8,3 +8,4 @@ userhub:
     subscribe: Create new subscription to user
     getByUserId: Get user subscription list
     unsubscribe: Delete subscription from user
+    top: Get top of subscription list
