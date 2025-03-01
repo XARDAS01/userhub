@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tech.spec.api.dto.SubscriptionDto;
 import tech.spec.api.request.UserSubscribeRequest;
+import tech.spec.enums.SubscriptionType;
 import tech.spec.service.SubscriptionService;
 
 import java.util.HashMap;
@@ -35,5 +36,11 @@ public record SubscriptionController(SubscriptionService subscriptionService) {
     public ResponseEntity<Void> unsubscribe(@RequestBody HashMap<UUID, List<UUID>> subscribes) {
         subscriptionService.unsubscribe(subscribes);
         return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/top")
+    @Operation(summary = "${userhub.subscription.top}", responses = @ApiResponse(responseCode = "200"))
+    public ResponseEntity<List<SubscriptionType>> top() {
+        return ResponseEntity.ok().body(subscriptionService.top());
     }
 }

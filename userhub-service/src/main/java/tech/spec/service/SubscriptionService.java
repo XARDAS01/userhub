@@ -3,6 +3,7 @@ package tech.spec.service;
 import org.springframework.lang.NonNull;
 import tech.spec.api.dto.SubscriptionDto;
 import tech.spec.api.request.UserSubscribeRequest;
+import tech.spec.enums.SubscriptionType;
 
 import java.util.HashMap;
 import java.util.List;
@@ -16,4 +17,7 @@ public interface SubscriptionService {
     List<SubscriptionDto> subscriptions(@NonNull UUID id);
 
     void unsubscribe(@NonNull HashMap<UUID, List<UUID>> subscribes);
+
+    @NonNull
+    List<SubscriptionType> top();
 }

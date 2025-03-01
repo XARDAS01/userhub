@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import tech.spec.api.dto.SubscriptionDto;
 import tech.spec.api.request.UserSubscribeRequest;
+import tech.spec.enums.SubscriptionType;
 import tech.spec.mapper.SubscriptionMapper;
 import tech.spec.repository.SubscriptionRepository;
 import tech.spec.repository.UserRepository;
@@ -51,5 +52,12 @@ public class SubscriptionServiceImpl implements SubscriptionService {
             subscriptionRepository.unsubscribe(value);
             log.info("Subscriptions {} cancelled for user {}", value, key);
         }, () -> log.info("Unsubscribe process cancelled {} for user {}", value, key)));
+    }
+
+    @Override
+    @NonNull
+    @Transactional(readOnly = true)
+    public List<SubscriptionType> top() {
+        return subscriptionRepository.findTopTypes();
     }
 }

@@ -12,7 +12,7 @@ import tech.spec.model.User;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-03-01T19:35:09+0100",
+    date = "2025-03-01T19:47:28+0100",
     comments = "version: 1.6.3, compiler: javac, environment: Java 17.0.8 (Amazon.com Inc.)"
 )
 @Component
