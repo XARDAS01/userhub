@@ -1,0 +1,10 @@
+userhub:
+  user:
+    registration: Create new user account
+    getById: Get user account information by UUID
+    update: Update user account
+    delete: Delete user account
+  subscription:
+    subscribe: Create new subscription to user
+    getByUserId: Get user subscription list
+    unsubscribe: Delete subscription from user

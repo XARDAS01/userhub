@@ -1,0 +1,129 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.4.3</version>
+    <relativePath/>
+  </parent>
+
+  <groupId>tech.spec</groupId>
+  <artifactId>userhub-parrent</artifactId>
+  <packaging>pom</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+
+  <name>${app.name} Parrent</name>
+
+  <properties>
+    <app.name>Userhub ::</app.name>
+    <java.version>17</java.version>
+
+    <jackson-version>2.18.2</jackson-version>
+    <jakarta-version>3.1.0</jakarta-version>
+    <liquibase-version>4.29.2</liquibase-version>
+    <postgresql-version>42.7.4</postgresql-version>
+    <hibernate-processor-version>7.0.0.Beta1</hibernate-processor-version>
+    <hibernate-utils-version>3.8.3</hibernate-utils-version>
+
+    <mapstruct-version>1.6.3</mapstruct-version>
+    <lombok-mapstruct-version>0.2.0</lombok-mapstruct-version>
+    <lombok-version>1.18.36</lombok-version>
+
+    <swagger-version>2.2.28</swagger-version>
+    <springdoc-version>2.8.3</springdoc-version>
+
+    <compiler.plugin>3.14.0</compiler.plugin>
+    <configuration.processor>3.4.3</configuration.processor>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>${jackson-version}</version>
+      </dependency>
+      <dependency>
+        <groupId>jakarta.validation</groupId>
+        <artifactId>jakarta.validation-api</artifactId>
+        <version>${jakarta-version}</version>
+      </dependency>
+
+      <!--   DB   -->
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-jpa</artifactId>
+      </dependency>
+      <dependency>
+        <groupId>org.liquibase</groupId>
+        <artifactId>liquibase-core</artifactId>
+        <version>${liquibase-version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.postgresql</groupId>
+        <artifactId>postgresql</artifactId>
+        <version>${postgresql-version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.hypersistence</groupId>
+        <artifactId>hypersistence-utils-hibernate-63</artifactId>
+        <version>${hibernate-utils-version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.hibernate.orm</groupId>
+        <artifactId>hibernate-processor</artifactId>
+        <version>${hibernate-processor-version}</version>
+      </dependency>
+
+      <!--   MAPSTRUCT   -->
+      <dependency>
+        <groupId>org.mapstruct</groupId>
+        <artifactId>mapstruct</artifactId>
+        <version>${mapstruct-version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.mapstruct</groupId>
+        <artifactId>mapstruct-processor</artifactId>
+        <version>${mapstruct-version}</version>
+      </dependency>
+
+      <!--   LOMBOK   -->
+      <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>${lombok-version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok-mapstruct-binding</artifactId>
+        <version>${lombok-mapstruct-version}</version>
+      </dependency>
+
+      <!--   API DOC   -->
+      <dependency>
+        <groupId>org.springdoc</groupId>
+        <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+        <version>${springdoc-version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.swagger.core.v3</groupId>
+        <artifactId>swagger-annotations</artifactId>
+        <version>${swagger-version}</version>
+      </dependency>
+
+      <!--   BUILD   -->
+      <dependency>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${compiler.plugin}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-configuration-processor</artifactId>
+        <version>${configuration.processor}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+</project>
